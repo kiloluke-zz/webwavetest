@@ -1,0 +1,16 @@
+<html layout:decorator="layout" xmlns:layout="http://www.w3.org/1999/xhtml">
+    <div layout:fragment="content">
+        <form method="contact" name="comment_form" id="comment_form" action="/contacts/create" role="form">
+            <div class="form-group">
+                <label for="lastName">Contact</label>
+
+                <input rows="5" class="form-control" id="firstName" name="firstName" /> <br/>
+                <input rows="5" class="form-control" id="lastName" name="lastName"/> <br/>
+                <input rows="5" class="form-control" id="phone" name="phone" /> <br/>
+                <input rows="5" class="form-control" id="email" name="email" /> <br/>
+                <input rows="5" class="form-control" id="address" name="address"/> <br/>
+            </div>
+            <button type="submit" id="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</html>

@@ -1,0 +1,44 @@
+<html layout:decorator="layout" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.w3.org/1999/xhtml">
+
+<div layout:fragment="content">
+
+    <a class="btn btn-primary" href="/contacts/new">Add new contact</a>
+
+    <table class="table table-striped" id="contact_list">
+        <thead>
+        <tr>
+            <th>Contact</th>
+            <th></th><th></th><th></th><th></th>
+            <th>Action</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+        <tr data-th-each="contact : ${contacts}">
+            <td class="message" data-th-text="${contact.firstName}"></td>
+            <td class="message" data-th-text="${contact.lastName}"></td>
+            <td class="message" data-th-text="${contact.email}"></td>
+            <td class="message" data-th-text="${contact.phone}"></td>
+            <td class="message" data-th-text="${contact.address}"></td>
+
+            <td>
+                <a th:href="@{'/contacts/{id}/delete'(id=${contact.id})}" class="delete" th:attr="name=${contact.id}">
+                        <span class="fa-stack">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </span>
+                </a>
+            </td>
+
+            <td>
+                <a th:href="@{'/contacts/{id}/edit'(id=${contact.id})}" class="edit" th:attr="name=${contact.id}">
+                    <span class="fa-stack">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </span>
+
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</html>

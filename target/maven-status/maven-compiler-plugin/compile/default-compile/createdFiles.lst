@@ -1,0 +1,4 @@
+com/webwave/domain/Contact.class
+com/webwave/controllers/ContactController.class
+com/webwave/Application.class
+com/webwave/domain/ContactRepository.class
